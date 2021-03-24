@@ -25,7 +25,7 @@ SECRET_KEY = '_co)c!q9elrx2az6%#692x*d5bafu9@=&cvexe4^z7l)!@vz&5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,12 +75,22 @@ WSGI_APPLICATION = 'pagination_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+        'default': {
+            'ENGINE'    : 'django.db.backends.mysql',
+            'NAME'      : 'rashmiv$Employee',
+            'USER'      : 'rashmiv',
+            'PASSWORD'  : 'Admin@123',
+            'HOST'      : 'rashmiv.mysql.pythonanywhere-services.com',
+            'PORT'      : '3306'
+            }
+		}
 
 
 # Password validation
